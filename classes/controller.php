@@ -694,7 +694,8 @@ class controller {
      */
     public static function get_tempdir() {
         global $CFG;
-        $tempdir = $CFG->tempdir . '/backup';
+        //$tempdir = $CFG->tempdir . '/backup';
+	$tempdir = get_backup_temp_directory('backup');
         if (!\check_dir_exists($tempdir, true, true)) {
             throw new exception('unexpectederror');
         }
